@@ -3,14 +3,11 @@ const button = document.getElementById("converter-button")
 // tou pegando meu select 
 const select = document.getElementById("select-cedula")
 
-const dolar = 5.2
 
-const Euro = 5.9
-
-const Bitcoin = 0.0000062
 
 // tou criando uma função para meu botão quando for cliclado
-const ConverteValue = () => {
+// minha função passou a ser async
+const ConverteValue = async () => {
 
     // pegando meu input e o valor dele
     const inputReais = document.getElementById("valorReais").value
@@ -19,7 +16,16 @@ const ConverteValue = () => {
     // tou pegando meu texto e modificando
     const dolarAmerica = document.getElementById("DolaAmericano")
 
+    //Async Await
+    const data = await fetch("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL").then(response => response.json())
 
+    const dolar = data.USDBRL.high
+
+    const Euro = data.EURBRL.high
+
+    const Bitcoin = data.BTCBRL.high
+    
+    console.log(data)
 
     if (select.value === ('US$ Dólar americano')) {
 
@@ -46,7 +52,7 @@ const ConverteValue = () => {
 
     }
 
- 
+
 
     //realBazil.innerHTML = inputReais
     // formatando valores e inserino valores
@@ -84,8 +90,8 @@ ChangeCurrey = () => {
         imagemPais.src = './assets/Eua.svg'
     }
 
-     // se
-     if (select.value === 'Bitcoin') {
+    // se
+    if (select.value === 'Bitcoin') {
         nameDolar.innerHTML = 'Bitcoin'
         imagemPais.src = './assets/biticoin.png'
     }
