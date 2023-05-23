@@ -1,7 +1,7 @@
 # convesor-de-moedas
 <div align="center" max-width="600" max-height="600">
   <a href="https://convesor-de-moedas.vercel.app/" target="_blank">
-    <img width="600" src="img/monei.png">
+    <img width="600" src="assets/monei.png">
   </a>
 </div>
 
