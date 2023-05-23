@@ -25,7 +25,7 @@ const ConverteValue = async () => {
 
     const Bitcoin = data.BTCBRL.high
     
-    console.log(data)
+    
 
     if (select.value === ('US$ Dólar americano')) {
 

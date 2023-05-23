@@ -2,6 +2,10 @@ body {
     background-color: #696969;
     /*opacity: 0.2;*/
     z-index: -9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
 
  
